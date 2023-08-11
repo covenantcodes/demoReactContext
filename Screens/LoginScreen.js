@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Image } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useUser } from '../Context/UserContext';
 
 const LoginScreen = ({navigation}) => {
@@ -22,7 +22,6 @@ const LoginScreen = ({navigation}) => {
             style={styles.logo}
          /> 
       </View>
-      <Text style={styles.loginText}>Login</Text>
       <TextInput
         placeholder="Username"
         style={styles.textInput}
@@ -37,11 +36,11 @@ const LoginScreen = ({navigation}) => {
         onChangeText={setPassword}
       />
 
-        <TouchableOpacity style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.buttonContainer}
+            onPress={handleLogin}
+        >
                     <Text style={styles.buttonText}>Register</Text>
         </TouchableOpacity>
-
-      <Button title="Login" onPress={handleLogin} />
     </View>
   );
 }
@@ -56,7 +55,8 @@ const styles = StyleSheet.create({
     logoBox:{
         width: "30%",
         padding: 5,
-        alignItems: "center"
+        alignItems: "center",
+        marginBottom: 12
     },
 
     logo:{
@@ -73,12 +73,43 @@ const styles = StyleSheet.create({
 
     textInput:{
         width: "80%",
-        borderWidth: 1,
+        backgroundColor: "white",
         borderColor: "gray",
         padding: 10,
         marginTop: 10,
-        borderRadius: 15,
-    }
+        borderRadius: 10,
+        shadowColor: "#000000",
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 0.36,
+        shadowRadius: 6.68,
+        elevation: 5
+    },
+
+    buttonContainer:{
+        width: "80%",
+        padding: 15,
+        marginHorizontal: 20,
+        marginTop: 15,
+        backgroundColor: "orange",
+        borderRadius: 10,
+        shadowColor: "#000000",
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 0.36,
+        shadowRadius: 6.68,
+        elevation: 10
+    },
+
+    buttonText: {
+        textAlign: "center",
+        color: "white",
+        fontSize: 15
+    },
 })
 
 export default LoginScreen;
