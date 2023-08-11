@@ -59,7 +59,7 @@ npx react-native run-ios
 4. You will be navigated to the user profile screen where the user's information will be displayed.
 
 ## Screenshots
-![Logo](./assets/screenshot.png)
+![Logo](./assets/screenshot.jpg)
 
 ## Demo
 
