@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
         fontWeight:"bold",
         width: "100%",
         marginTop: 5,
+        textAlign: "center"
     },
 
     textInput:{
