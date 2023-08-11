@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, Image } from 'react-native';
 import { useUser } from '../Context/UserContext';
 
 const LoginScreen = ({navigation}) => {
@@ -15,8 +15,14 @@ const LoginScreen = ({navigation}) => {
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text style={{ marginBottom: 20, fontSize: 18 }}>Login</Text>
+    <View style={styles.container}>
+      <View style={styles.logoBox}>
+          <Image
+            source={require("../assets/icon.png")}
+            style={styles.logo}
+         /> 
+      </View>
+      <Text style={styles.loginText}>Login</Text>
       <TextInput
         placeholder="Username"
         style={{ marginBottom: 10, padding: 10, borderWidth: 1, width: 200 }}
@@ -34,5 +40,25 @@ const LoginScreen = ({navigation}) => {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+    container:{
+       flex: 1, 
+       justifyContent: 'center',
+       alignItems: 'center' 
+    },
+
+    logoBox:{
+        width: "30%",
+        padding: 5,
+        borderWidth: 1,
+        alignItems: "center"
+    },
+
+    logo:{
+        width: 60,
+        height: 100
+    }
+})
 
 export default LoginScreen;
