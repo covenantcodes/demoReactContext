@@ -25,17 +25,22 @@ const LoginScreen = ({navigation}) => {
       <Text style={styles.loginText}>Login</Text>
       <TextInput
         placeholder="Username"
-        style={{ marginBottom: 10, padding: 10, borderWidth: 1, width: 200 }}
+        style={styles.textInput}
         value={username}
         onChangeText={setUsername}
       />
       <TextInput
         placeholder="Password"
         secureTextEntry
-        style={{ marginBottom: 20, padding: 10, borderWidth: 1, width: 200 }}
+        style={styles.textInput}
         value={password}
         onChangeText={setPassword}
       />
+
+        <TouchableOpacity style={styles.buttonContainer}>
+                    <Text style={styles.buttonText}>Register</Text>
+        </TouchableOpacity>
+
       <Button title="Login" onPress={handleLogin} />
     </View>
   );
@@ -51,13 +56,28 @@ const styles = StyleSheet.create({
     logoBox:{
         width: "30%",
         padding: 5,
-        borderWidth: 1,
         alignItems: "center"
     },
 
     logo:{
         width: 60,
         height: 100
+    },
+
+    loginText:{
+        marginBottom: 20, 
+        fontSize:22,
+        fontWeight:"bold",
+
+    },
+
+    textInput:{
+        width: "80%",
+        borderWidth: 1,
+        borderColor: "gray",
+        padding: 10,
+        marginTop: 10,
+        borderRadius: 15,
     }
 })
 
