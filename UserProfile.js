@@ -1,5 +1,5 @@
 // UserProfile.js
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { View, Text, Button } from 'react-native';
 import { useUser } from './Context/UserContext.js';
 
@@ -11,7 +11,7 @@ const UserProfileScreen = ()=> {
       {user ? (
         <Text>Welcome, {user.username}!</Text>
       ) : (
-        {/* <Text>Please log in to see user info.</Text> */}
+        <Text>Please log in to see user info.</Text>
       )}
     </View>
   );

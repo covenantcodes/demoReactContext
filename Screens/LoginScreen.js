@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { View, Text, TextInput, Button } from 'react-native';
 import { useUser } from '../Context/UserContext';
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
   const { setUser } = useUser();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -11,6 +11,7 @@ const LoginScreen = () => {
     // Perform login validation logic here
     // For simplicity, let's assume successful login
     setUser({ username });
+    navigation.navigate('UserProfile');
   };
 
   return (
