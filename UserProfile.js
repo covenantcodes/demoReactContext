@@ -1,22 +1,17 @@
 // UserProfile.js
 import React, { useContext } from 'react';
 import { View, Text, Button } from 'react-native';
-import { UserContext } from './Context/UserContext.js';
+import { useUser } from './Context/UserContext.js';
 
 const UserProfile = ()=> {
-  const { user, setUser } = useContext(UserContext);
-
-  const handleLogin = () => {
-    setUser({ username: 'exampleUser' });
-  };
+  const { user } = useUser();
 
   return (
-    <View>
-      <Text>User Profile</Text>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       {user ? (
         <Text>Welcome, {user.username}!</Text>
       ) : (
-        <Button title="Login" onPress={handleLogin} />
+        <Text>Please log in to see user info.</Text>
       )}
     </View>
   );
