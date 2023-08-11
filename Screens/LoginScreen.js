@@ -21,6 +21,7 @@ const LoginScreen = ({navigation}) => {
             source={require("../assets/icon.png")}
             style={styles.logo}
          /> 
+         <Text style={styles.loginText}>CovenantCodes</Text>
       </View>
       <TextInput
         placeholder="Username"
@@ -39,7 +40,7 @@ const LoginScreen = ({navigation}) => {
         <TouchableOpacity style={styles.buttonContainer}
             onPress={handleLogin}
         >
-                    <Text style={styles.buttonText}>Register</Text>
+                    <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
     </View>
   );
@@ -65,10 +66,10 @@ const styles = StyleSheet.create({
     },
 
     loginText:{
-        marginBottom: 20, 
-        fontSize:22,
+        fontSize:16,
         fontWeight:"bold",
-
+        width: "100%",
+        marginTop: 5,
     },
 
     textInput:{
