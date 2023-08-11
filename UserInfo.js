@@ -1,5 +1,5 @@
 // UserInfo.js
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { View, Text } from 'react-native';
 import { UserContext } from './Context/UserContext.js';
 

@@ -1,13 +1,10 @@
-import React from 'react';
-import { UserProvider } from './Context/UserContext.js';
-import UserProfile from './UserProfile.js';
-import UserInfo from './UserInfo.js';
+import { UserProvider } from './Context/UserContext';
+import StackNavigator from './navigator/StackNavigator';
 
-const App = ()=> {
+const App =()=> {
   return (
     <UserProvider>
-      <UserProfile />
-      <UserInfo />
+      <StackNavigator />
     </UserProvider>
   );
 }

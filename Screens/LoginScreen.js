@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { View, Text, TextInput, Button } from 'react-native';
-import { useUser } from './UserContext';
+import { useUser } from '../Context/UserContext';
 
 const LoginScreen = () => {
   const { setUser } = useUser();

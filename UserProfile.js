@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { View, Text, Button } from 'react-native';
 import { useUser } from './Context/UserContext.js';
 
-const UserProfile = ()=> {
+const UserProfileScreen = ()=> {
   const { user } = useUser();
 
   return (
@@ -11,10 +11,10 @@ const UserProfile = ()=> {
       {user ? (
         <Text>Welcome, {user.username}!</Text>
       ) : (
-        <Text>Please log in to see user info.</Text>
+        {/* <Text>Please log in to see user info.</Text> */}
       )}
     </View>
   );
 }
 
-export default UserProfile;
+export default UserProfileScreen;
